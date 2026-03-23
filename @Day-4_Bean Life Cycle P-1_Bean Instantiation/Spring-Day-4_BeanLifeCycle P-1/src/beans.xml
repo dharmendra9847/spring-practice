@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="acc" class="com.mainapp.Account">
+        <property name="accountNumber" value="17910015"/>
+        <property name="bankName" value="Punjab National Bank"/>
+    </bean>
+
+<!--    STATIC METHOD-->
+<!--    <bean id="emp" class="com.mainapp.ObjectFactory" factory-method="getObject">-->
+<!--        <property name="account" ref="acc"/>-->
+<!--    </bean>-->
+
+    <!--   NON STATIC METHOD-->
+
+<!--    <bean id="emp" factory-bean="com.mainapp.ObjectFactory" factory-method="getObject">-->
+<!--        <property name="account" ref="acc"/>-->
+<!--    </bean>-->
+
+    <bean id="objectFactory" class="com.mainapp.ObjectFactory">
+        <property name="account" ref="acc"/>
+    </bean>
+
+    <bean id="emp" factory-bean="objectFactory" factory-method="getObject"></bean>
+</beans>
