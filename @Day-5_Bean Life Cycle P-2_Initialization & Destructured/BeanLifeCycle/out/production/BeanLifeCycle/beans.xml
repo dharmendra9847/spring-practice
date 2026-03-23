@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- XML APPROACH -->
+<!--    <bean id="emp" class="com.mainapp.EmployeeXml" init-method="xmlInit" destroy-method="xmlDestroy"></bean>-->
+
+    <!-- ANNOTATION APPROACH -->
+<!--    <bean id="emp" class="com.mainapp.EmployeeAnno"></bean>-->
+<!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>-->
+
+    <!-- CALLBACK INTERFACE -->
+    <bean id="emp" class="com.mainapp.EmployeeCallBackInterface" scope="prototype"></bean>
+
+</beans>
